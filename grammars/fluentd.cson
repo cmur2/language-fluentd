@@ -1,0 +1,44 @@
+scopeName: 'source.fluentd'
+name: 'Fluentd Config File'
+fileTypes: [
+  'fluent.conf'
+]
+patterns: [
+  {
+    match: "#.*"
+    name: "comment.line.number-sign.fluentd"
+  }
+  {
+    match: "(<)(\\w+)(\\s([^>]+?))?(>)"
+    name: "entity.tag.start.fluentd"
+    captures:
+      "1":
+        name: "punctuation.definition.tag.fluentd"
+      "2":
+        name: "entity.tag.fluentd"
+      "4":
+        name: "entity.other.attribute-name.fluentd"
+      "5":
+        name: "punctuation.definition.tag.fluentd"
+  }
+  {
+    match: "(</)(\\w+)(>)"
+    name: "entity.tag.end.fluentd"
+    captures:
+      "1":
+        name: "punctuation.definition.tag.fluentd"
+      "2":
+        name: "entity.tag.fluentd"
+      "3":
+        name: "punctuation.definition.tag.fluentd"
+  }
+  {
+    match: "([^\\s]+)(\\s+([^\\n]+))?"
+    name: "keyword.directive.generic.fluentd"
+    captures:
+      "1":
+        name: "keyword.directive.fluentd"
+      "3":
+        name: "string.unquoted.fluentd"
+  }
+]

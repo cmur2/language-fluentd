@@ -1,0 +1,17 @@
+{
+  "name": "language-fluentd",
+  "description": "Fluentd Config File language support in Atom",
+  "version": "0.0.0",
+  "engines": {
+    "atom": "*"
+  },
+  "homepage": "https://github.com/cmur2/language-fluentd",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmur2/language-fluentd.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmur2/language-fluentd/issues"
+  }
+}
