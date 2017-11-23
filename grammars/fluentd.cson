@@ -1,5 +1,5 @@
 scopeName: 'source.fluentd'
-name: 'Fluentd Config File'
+name: 'Fluentd Configuration'
 fileTypes: [
   'fluent.conf'
 ]

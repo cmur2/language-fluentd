@@ -1,6 +1,6 @@
 {
   "name": "language-fluentd",
-  "description": "Fluentd Config File language support in Atom",
+  "description": "Fluentd Configuration language support in Atom",
   "version": "1.0.0",
   "engines": {
     "atom": "*"
