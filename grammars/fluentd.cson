@@ -3,6 +3,8 @@ name: 'Fluentd Configuration'
 fileTypes: [
   'fluent.conf'
 ]
+foldingStartMarker: '<[^>]+>\\s*$'
+foldingStopMarker: '^\\s*</[^>]+>'
 patterns: [
   {
     match: "#.*"

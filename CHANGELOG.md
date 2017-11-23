@@ -2,6 +2,10 @@
 
 ## 1.1.0
 
+NEW FEATURES:
+
+- Support folding markers for directives like `<source>...</source>`
+
 IMPROVEMENTS:
 
 - Add example Fluentd Configuration file using as many Fluentd features as possible even if they are not highlighted correctly
