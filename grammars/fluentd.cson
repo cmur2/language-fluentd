@@ -93,6 +93,7 @@ repository:
         name: 'meta.value.string.quoted.double.fluentd'
         patterns: [
           {include: '#stringescapes'}
+          {include: '#stringinterpolations'}
         ]
       }
       {
@@ -166,5 +167,16 @@ repository:
       {
         match: '\\\\.'
         name: 'constant.string.escape.fluentd'
+      }
+    ]
+  stringinterpolations:
+    patterns: [
+      {
+        begin: '#\\{'
+        end: '\\}'
+        name: 'constant.string.interpolation.fluentd'
+        patterns: [
+          {include: 'source.ruby'}
+        ]
       }
     ]
