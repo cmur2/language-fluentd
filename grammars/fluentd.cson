@@ -78,6 +78,28 @@ repository:
   values:
     patterns: [
       {
+        begin: '(")'
+        beginCaptures:
+          '1':
+            name: 'punctuation.definition.string.begin.fluentd'
+        end: '(")'
+        endCaptures:
+          '1':
+            name: 'punctuation.definition.string.end.fluentd'
+        name: 'meta.value.string.quoted.double.fluentd'
+      }
+      {
+        begin: "(')"
+        beginCaptures:
+          '1':
+            name: 'punctuation.definition.string.begin.fluentd'
+        end: "(')"
+        endCaptures:
+          '1':
+            name: 'punctuation.definition.string.end.fluentd'
+        name: 'meta.value.string.quoted.single.fluentd'
+      }
+      {
         match: '([^\\s]+?)'
         name: 'meta.string.unquoted.fluentd'
         captures:
