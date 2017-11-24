@@ -5,42 +5,83 @@ fileTypes: [
 ]
 foldingStartMarker: '<[^>]+>\\s*$'
 foldingStopMarker: '^\\s*</[^>]+>'
+
 patterns: [
-  {
-    match: "#.*"
-    name: "comment.line.number-sign.fluentd"
-  }
-  {
-    match: "(<)(\\w+)(\\s([^>]+?))?(>)"
-    name: "entity.tag.start.fluentd"
-    captures:
-      "1":
-        name: "punctuation.definition.tag.fluentd"
-      "2":
-        name: "entity.tag.fluentd"
-      "4":
-        name: "entity.other.attribute-name.fluentd"
-      "5":
-        name: "punctuation.definition.tag.fluentd"
-  }
-  {
-    match: "(</)(\\w+)(>)"
-    name: "entity.tag.end.fluentd"
-    captures:
-      "1":
-        name: "punctuation.definition.tag.fluentd"
-      "2":
-        name: "entity.tag.fluentd"
-      "3":
-        name: "punctuation.definition.tag.fluentd"
-  }
-  {
-    match: "([^\\s]+)(\\s+([^\\n]+))?"
-    name: "keyword.directive.generic.fluentd"
-    captures:
-      "1":
-        name: "keyword.directive.fluentd"
-      "3":
-        name: "string.unquoted.fluentd"
-  }
+  {include: '#comments'}
+  {include: '#directives'}
 ]
+
+repository:
+  comments:
+    patterns: [
+      {
+        match: '#.*'
+        name: 'comment.line.number-sign.fluentd'
+      }
+    ]
+  directives:
+    patterns: [
+      {
+        match: '((@)include)\\s+([^\\s]+)'
+        captures:
+          '1':
+            name: 'entity.directive.begin.fluentd'
+          '2':
+            name: 'punctuation.definition.directive.begin.fluentd'
+          '3':
+            name: 'entity.other.directive.attribute-name.fluentd'
+      }
+      {
+        begin: '((<)[^\\s]+(\\s+[^>]+)?(>))'
+        beginCaptures:
+          '1':
+            name: 'entity.directive.begin.fluentd'
+          '2':
+            name: 'punctuation.definition.directive.begin.fluentd'
+          '3':
+            name: 'entity.other.directive.attribute-name.fluentd'
+          '4':
+            name: 'punctuation.definition.directive.end.fluentd'
+        end: '((</)\\w+(>))'
+        endCaptures:
+          '1':
+            name: 'entity.directive.end.fluentd'
+          '2':
+            name: 'punctuation.definition.directive.begin.fluentd'
+          '3':
+            name: 'punctuation.definition.directive.end.fluentd'
+        name: 'meta.directive.fluentd'
+        patterns: [
+          {include: '#comments'}
+          {include: '#directives'}
+          {include: '#parameters'}
+        ]
+      }
+    ]
+  parameters:
+    patterns: [
+      {
+        begin: '(@[^\\s]+)|([^\\s]+)'
+        beginCaptures:
+          '1':
+            name: 'keyword.parameter.system.fluentd'
+          '2':
+            name: 'keyword.parameter.fluentd'
+        end: '\\n'
+        name: 'meta.parameter.fluentd'
+        patterns: [
+          {include: '#comments'}
+          {include: '#values'}
+        ]
+      }
+    ]
+  values:
+    patterns: [
+      {
+        match: '([^\\s]+?)'
+        name: 'meta.string.unquoted.fluentd'
+        captures:
+          '1':
+            name: 'string.unquoted.fluentd'
+      }
+    ]
