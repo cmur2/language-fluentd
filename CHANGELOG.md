@@ -6,6 +6,7 @@ NEW FEATURES:
 
 - Support folding markers for directives like `<source>...</source>`
 - Support toggling comments
+- Support escape sequenes like `foo\nbar` in single, double and unquoted strings
 
 IMPROVEMENTS:
 

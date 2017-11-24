@@ -78,6 +78,10 @@ repository:
   values:
     patterns: [
       {
+        match: '\\\\.'
+        name: 'value.string.escape.fluentd'
+      }
+      {
         begin: '(")'
         beginCaptures:
           '1':
@@ -87,6 +91,9 @@ repository:
           '1':
             name: 'punctuation.definition.string.end.fluentd'
         name: 'meta.value.string.quoted.double.fluentd'
+        patterns: [
+          {include: '#stringescapes'}
+        ]
       }
       {
         begin: "(')"
@@ -98,6 +105,9 @@ repository:
           '1':
             name: 'punctuation.definition.string.end.fluentd'
         name: 'meta.value.string.quoted.single.fluentd'
+        patterns: [
+          {include: '#stringescapes'}
+        ]
       }
       {
         match: '([^\\s]+?)'
@@ -105,5 +115,12 @@ repository:
         captures:
           '1':
             name: 'string.unquoted.fluentd'
+      }
+    ]
+  stringescapes:
+    patterns: [
+      {
+        match: '\\\\.'
+        name: 'constant.string.escape.fluentd'
       }
     ]
