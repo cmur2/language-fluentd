@@ -5,6 +5,7 @@
 NEW FEATURES:
 
 - Support folding markers for directives like `<source>...</source>`
+- Support toggling comments
 
 IMPROVEMENTS:
 
