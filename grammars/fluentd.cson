@@ -110,6 +110,46 @@ repository:
         ]
       }
       {
+        begin: '(\\[)'
+        beginCaptures:
+          '1':
+            name: 'punctuation.definition.array.begin.fluentd'
+        end: '(\\])'
+        endCaptures:
+          '1':
+            name: 'punctuation.definition.array.end.fluentd'
+        name: 'meta.value.array.fluentd'
+        patterns: [
+          {include: 'source.json'}
+        ]
+      }
+      {
+        begin: '\\{'
+        beginCaptures:
+          '1':
+            name: 'punctuation.definition.hash.begin.fluentd'
+        end: '\\}'
+        endCaptures:
+          '1':
+            name: 'punctuation.definition.hash.end.fluentd'
+        name: 'meta.value.hash.fluentd'
+        patterns: [
+          {include: 'source.json'}
+        ]
+      }
+      {
+        match: '\\b(\\d+)\\b'
+        name: 'value.constant.integer.fluentd'
+      }
+      {
+        match: '\\b(\\d+[kmgtKMGT])\\b'
+        name: 'value.constant.size.fluentd'
+      }
+      {
+        match: '\\b(\\d+[smhd])\\b'
+        name: 'value.constant.time.fluentd'
+      }
+      {
         match: '([^\\s]+?)'
         name: 'meta.string.unquoted.fluentd'
         captures:

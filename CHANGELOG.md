@@ -7,6 +7,8 @@ NEW FEATURES:
 - Support folding markers for directives like `<source>...</source>`
 - Support toggling comments
 - Support escape sequenes like `foo\nbar` in single, double and unquoted strings
+- Support array and hash (using JSON source) value types like `["foo","bar"]`
+- Support integer, time and size value types (e.g. `property 100`, `bufsize 5M` or `finterval 5s`)
 
 IMPROVEMENTS:
 
