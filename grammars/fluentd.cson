@@ -150,6 +150,10 @@ repository:
         name: 'value.constant.time.fluentd'
       }
       {
+        match: '(\\$\\{[^\\}]*\\})'
+        name: 'variable.string.fluentd'
+      }
+      {
         match: '([^\\s]+?)'
         name: 'meta.string.unquoted.fluentd'
         captures:
