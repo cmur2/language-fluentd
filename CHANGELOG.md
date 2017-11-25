@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 (November 25, 2017)
+
+IMPROVEMENTS:
+
+- Add installation instructions and screenshot
+
 ## 1.1.0 (November 25, 2017)
 
 NEW FEATURES:
