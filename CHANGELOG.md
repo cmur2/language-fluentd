@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.0
+## 1.1.0 (November 25, 2017)
 
 NEW FEATURES:
 
@@ -9,7 +9,7 @@ NEW FEATURES:
 - Support escape sequenes like `foo\nbar` in single, double and unquoted strings
 - Support array and hash (using JSON source) value types like `["foo","bar"]`
 - Support integer, time and size value types (e.g. `property 100`, `bufsize 5M` or `finterval 5s`)
-- Support highlighting ${variables} (used by e.g. [record_transformer plugin](https://docs.fluentd.org/v0.12/articles/filter_record_transformer))
+- Support highlighting `${variables}` (used by e.g. [record_transformer plugin](https://docs.fluentd.org/v0.12/articles/filter_record_transformer))
 - Support (double quoted) string interpolations like `#{Time.new.to_i + 1}` (using Ruby source)
 
 IMPROVEMENTS:
