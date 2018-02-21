@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2 (February 21, 2018)
+
+IMPROVEMENTS:
+
+- Detection of regex values (although not an official data type) to avoid weird highlighting
+
 ## 1.1.1 (November 25, 2017)
 
 IMPROVEMENTS:

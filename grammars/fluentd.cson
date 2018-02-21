@@ -139,6 +139,10 @@ repository:
         ]
       }
       {
+        match: '\/.+\/$'
+        name: 'value.string.regex.fluentd'
+      }
+      {
         match: '\\b(\\d+)\\b'
         name: 'value.constant.integer.fluentd'
       }
