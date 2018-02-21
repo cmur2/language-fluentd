@@ -2,6 +2,13 @@
   "name": "language-fluentd",
   "description": "Fluentd Configuration language support in Atom",
   "version": "1.1.2",
+  "keywords": [
+    "language",
+    "grammar",
+    "fluentd",
+    "configuration",
+    "logging"
+  ],
   "engines": {
     "atom": "*"
   },

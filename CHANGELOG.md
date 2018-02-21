@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.3 (February 21, 2018)
+
+IMPROVEMENTS:
+
+- Add package keywords
+
 ## 1.1.2 (February 21, 2018)
 
 IMPROVEMENTS:
